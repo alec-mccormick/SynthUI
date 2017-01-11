@@ -11,6 +11,8 @@
 		26A3DCB81E25F56300E666EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A3DCB71E25F56300E666EC /* main.m */; };
 		26A3DCBA1E25F56300E666EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A3DCB91E25F56300E666EC /* Assets.xcassets */; };
 		26A3DCBD1E25F56300E666EC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A3DCBB1E25F56300E666EC /* MainMenu.xib */; };
+		26A3DCC61E25F56E00E666EC /* MiniSynthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A3DCC51E25F56E00E666EC /* MiniSynthView.m */; };
+		26A3DCCA1E25F94E00E666EC /* SMTNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A3DCC91E25F94E00E666EC /* SMTNavigationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,10 @@
 		26A3DCB91E25F56300E666EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26A3DCBC1E25F56300E666EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		26A3DCBE1E25F56300E666EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A3DCC41E25F56E00E666EC /* MiniSynthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniSynthView.h; sourceTree = "<group>"; };
+		26A3DCC51E25F56E00E666EC /* MiniSynthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniSynthView.m; sourceTree = "<group>"; };
+		26A3DCC81E25F94E00E666EC /* SMTNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTNavigationView.h; sourceTree = "<group>"; };
+		26A3DCC91E25F94E00E666EC /* SMTNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTNavigationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 				26A3DCB91E25F56300E666EC /* Assets.xcassets */,
 				26A3DCBB1E25F56300E666EC /* MainMenu.xib */,
 				26A3DCBE1E25F56300E666EC /* Info.plist */,
+				26A3DCC71E25F6DB00E666EC /* View */,
 				26A3DCB61E25F56300E666EC /* Supporting Files */,
 			);
 			path = SynthUI;
@@ -69,6 +76,17 @@
 				26A3DCB71E25F56300E666EC /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26A3DCC71E25F6DB00E666EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				26A3DCC41E25F56E00E666EC /* MiniSynthView.h */,
+				26A3DCC51E25F56E00E666EC /* MiniSynthView.m */,
+				26A3DCC81E25F94E00E666EC /* SMTNavigationView.h */,
+				26A3DCC91E25F94E00E666EC /* SMTNavigationView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +160,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26A3DCC61E25F56E00E666EC /* MiniSynthView.m in Sources */,
 				26A3DCB81E25F56300E666EC /* main.m in Sources */,
+				26A3DCCA1E25F94E00E666EC /* SMTNavigationView.m in Sources */,
 				26A3DCB51E25F56300E666EC /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

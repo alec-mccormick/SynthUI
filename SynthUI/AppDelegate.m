@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MiniSynthView.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,24 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+    
+    CGFloat titleBarHeight = 22.0;
+    CGSize size = CGSizeMake(736.0, 414.0 + titleBarHeight);
+    
+    NSRect frame = [self.window frame];
+    frame.origin.y = frame.origin.y + size.height - frame.size.height;
+    frame.size = size;
+    
+    [self.window setTitle:@"Mini Synth UI"];
+    
+    [self.window setFrame:frame display:YES];
+    [self.window setBackgroundColor:[NSColor clearColor]];
+    [self.window setOpaque:NO];
+    
+    [self.window setStyleMask:[self.window styleMask] & ~NSWindowStyleMaskResizable];
+    
+    
+    self.window.contentView = [[MiniSynthView alloc] initWithFrame: CGRectMake(0.0, 0.0, size.width, size.height - titleBarHeight)];
 }
 
 
