@@ -22,23 +22,23 @@
     
     if(self)
     {
-        NSButtonCell *prototype = [[NSButtonCell alloc] init];
-        [prototype setButtonType:NSRadioButton];
-        
-        NSRect matrixRect = NSMakeRect(0.0, 0.0, 300.0, 25.0);
-        NSMatrix *myMatrix = [[NSMatrix alloc] initWithFrame:matrixRect
-                                                        mode:NSRadioModeMatrix
-                                                   prototype:(NSCell *)prototype
-                                                numberOfRows:1
-                                             numberOfColumns:3];
-        [myMatrix setAction:@selector(radioButtonClicked:)];
-        [myMatrix setTarget:self];
-        [self addSubview:myMatrix];
-        
-        NSArray *cellArray = [myMatrix cells];
-        [[cellArray objectAtIndex:0] setTitle:@"Apples"];
-        [[cellArray objectAtIndex:1] setTitle:@"Oranges"];
-        [[cellArray objectAtIndex:2] setTitle:@"Pears"];
+//        NSButtonCell *prototype = [[NSButtonCell alloc] init];
+//        [prototype setButtonType:NSRadioButton];
+//        
+//        NSRect matrixRect = NSMakeRect(0.0, 0.0, 300.0, 25.0);
+//        NSMatrix *myMatrix = [[NSMatrix alloc] initWithFrame:matrixRect
+//                                                        mode:NSRadioModeMatrix
+//                                                   prototype:(NSCell *)prototype
+//                                                numberOfRows:1
+//                                             numberOfColumns:3];
+//        [myMatrix setAction:@selector(radioButtonClicked:)];
+//        [myMatrix setTarget:self];
+//        [self addSubview:myMatrix];
+//        
+//        NSArray *cellArray = [myMatrix cells];
+//        [[cellArray objectAtIndex:0] setTitle:@"Apples"];
+//        [[cellArray objectAtIndex:1] setTitle:@"Oranges"];
+//        [[cellArray objectAtIndex:2] setTitle:@"Pears"];
     }
     
     return self;

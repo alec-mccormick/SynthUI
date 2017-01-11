@@ -13,6 +13,8 @@
 		26A3DCBD1E25F56300E666EC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A3DCBB1E25F56300E666EC /* MainMenu.xib */; };
 		26A3DCC61E25F56E00E666EC /* MiniSynthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A3DCC51E25F56E00E666EC /* MiniSynthView.m */; };
 		26A3DCCA1E25F94E00E666EC /* SMTNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A3DCC91E25F94E00E666EC /* SMTNavigationView.m */; };
+		4AD2520B1E260F9B006477A7 /* SMTNavButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2520A1E260F9B006477A7 /* SMTNavButtonCell.m */; };
+		4AD2520D1E261051006477A7 /* button_big_uvi.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AD2520C1E261051006477A7 /* button_big_uvi.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,9 @@
 		26A3DCC51E25F56E00E666EC /* MiniSynthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniSynthView.m; sourceTree = "<group>"; };
 		26A3DCC81E25F94E00E666EC /* SMTNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTNavigationView.h; sourceTree = "<group>"; };
 		26A3DCC91E25F94E00E666EC /* SMTNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTNavigationView.m; sourceTree = "<group>"; };
+		4AD252091E260F9B006477A7 /* SMTNavButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTNavButtonCell.h; sourceTree = "<group>"; };
+		4AD2520A1E260F9B006477A7 /* SMTNavButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTNavButtonCell.m; sourceTree = "<group>"; };
+		4AD2520C1E261051006477A7 /* button_big_uvi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_big_uvi.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,11 +64,9 @@
 		26A3DCB21E25F56300E666EC /* SynthUI */ = {
 			isa = PBXGroup;
 			children = (
-				26A3DCB31E25F56300E666EC /* AppDelegate.h */,
-				26A3DCB41E25F56300E666EC /* AppDelegate.m */,
 				26A3DCB91E25F56300E666EC /* Assets.xcassets */,
-				26A3DCBB1E25F56300E666EC /* MainMenu.xib */,
-				26A3DCBE1E25F56300E666EC /* Info.plist */,
+				4AD2520C1E261051006477A7 /* button_big_uvi.png */,
+				4AD252081E260DBD006477A7 /* New Group */,
 				26A3DCC71E25F6DB00E666EC /* View */,
 				26A3DCB61E25F56300E666EC /* Supporting Files */,
 			);
@@ -85,8 +88,21 @@
 				26A3DCC51E25F56E00E666EC /* MiniSynthView.m */,
 				26A3DCC81E25F94E00E666EC /* SMTNavigationView.h */,
 				26A3DCC91E25F94E00E666EC /* SMTNavigationView.m */,
+				4AD252091E260F9B006477A7 /* SMTNavButtonCell.h */,
+				4AD2520A1E260F9B006477A7 /* SMTNavButtonCell.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		4AD252081E260DBD006477A7 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				26A3DCB31E25F56300E666EC /* AppDelegate.h */,
+				26A3DCB41E25F56300E666EC /* AppDelegate.m */,
+				26A3DCBB1E25F56300E666EC /* MainMenu.xib */,
+				26A3DCBE1E25F56300E666EC /* Info.plist */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +164,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AD2520D1E261051006477A7 /* button_big_uvi.png in Resources */,
 				26A3DCBA1E25F56300E666EC /* Assets.xcassets in Resources */,
 				26A3DCBD1E25F56300E666EC /* MainMenu.xib in Resources */,
 			);
@@ -160,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AD2520B1E260F9B006477A7 /* SMTNavButtonCell.m in Sources */,
 				26A3DCC61E25F56E00E666EC /* MiniSynthView.m in Sources */,
 				26A3DCB81E25F56300E666EC /* main.m in Sources */,
 				26A3DCCA1E25F94E00E666EC /* SMTNavigationView.m in Sources */,
@@ -313,6 +331,7 @@
 				26A3DCC31E25F56300E666EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -27,12 +27,17 @@
         
 
         [self addSubview:self.navigationView];
+        
+//        NSImage *image = [NSImage imageNamed:@"button_big_uvi.png"];
+        
+//        NSButton btn = [NSButton buttonWithTitle:@"title" image:image target:self action:@selector(buttonPressed)];
     }
     
     return self;
 }
 
-- (void)drawRect:(NSRect)dirtyRect {
+- (void)drawRect:(NSRect)dirtyRect
+{
     [super drawRect:dirtyRect];
     
     // --- Draw test color
@@ -45,8 +50,21 @@
 
 
 - (void)logRect:(NSRect)rect
-          title:(NSString*)title {
+          title:(NSString*)title
+{
     NSLog(@"%@ x:%f, y:%f, width:%f, height:%f", title, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+}
+
+- (IBAction)radioButtonClicked:(NSButton *)sender {
+//    NSInteger tag = [[sender selectedCell] tag];
+    
+    NSLog(@"Radio Button clicked!");
+}
+
+-(void)buttonPressed {
+    NSLog(@"Button pressed!");
+    
+    //Do what You want here...
 }
 
 @end
