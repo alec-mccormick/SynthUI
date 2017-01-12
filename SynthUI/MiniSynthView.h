@@ -8,7 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 #import "SMTNavigationView.h"
-#import "SMTNavButtonCell.h"
+//#import "SMTNavButtonCell.h"
+#import "SMTButton.h"
 
 @interface MiniSynthView : NSView
 

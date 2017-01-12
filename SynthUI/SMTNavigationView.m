@@ -7,6 +7,7 @@
 //
 
 #import "SMTNavigationView.h"
+#import "SMTButtonCell.h"
 
 @implementation SMTNavigationView
 
@@ -22,26 +23,57 @@
     
     if(self)
     {
-//        NSButtonCell *prototype = [[NSButtonCell alloc] init];
-//        [prototype setButtonType:NSRadioButton];
-//        
-//        NSRect matrixRect = NSMakeRect(0.0, 0.0, 300.0, 25.0);
-//        NSMatrix *myMatrix = [[NSMatrix alloc] initWithFrame:matrixRect
-//                                                        mode:NSRadioModeMatrix
-//                                                   prototype:(NSCell *)prototype
-//                                                numberOfRows:1
-//                                             numberOfColumns:3];
-//        [myMatrix setAction:@selector(radioButtonClicked:)];
-//        [myMatrix setTarget:self];
-//        [self addSubview:myMatrix];
-//        
-//        NSArray *cellArray = [myMatrix cells];
-//        [[cellArray objectAtIndex:0] setTitle:@"Apples"];
-//        [[cellArray objectAtIndex:1] setTitle:@"Oranges"];
-//        [[cellArray objectAtIndex:2] setTitle:@"Pears"];
+        // --- Variables
+        self.tabTitles = @[@"Keyboard", @"Osc", @"Mod", @"Filters", @"Fx"];
+        
+        // --- Initialization
+        [self initTabMatrixView];
     }
     
     return self;
+}
+
+- (void)initTabMatrixView
+{
+    SMTButtonCell *prototype = [[SMTButtonCell alloc] init];
+    prototype.isRadioButton = YES;
+    
+    // --- Constants
+    CGFloat btnWidth = 85.0;
+    CGFloat btnHeight = 30.0;
+    CGFloat rightPadding = 25.0;
+    CGFloat intercellSpacing = 1.0;
+    
+    // --- Derived variables
+    NSRect frame = [self bounds];
+    CGFloat tabMatrixWidth = (btnWidth + intercellSpacing) * [self.tabTitles count];
+    
+    
+    // --- Create matrix
+    NSMatrix *matrix = [[NSMatrix alloc] initWithFrame:NSMakeRect((frame.size.width - tabMatrixWidth) - rightPadding, (frame.size.height - btnHeight)/2 , tabMatrixWidth, btnHeight)
+                                                    mode:NSRadioModeMatrix
+                                               prototype:prototype
+                                            numberOfRows:1
+                                         numberOfColumns:[self.tabTitles count]];
+    [matrix setAction:@selector(radioButtonClicked:)];
+    [matrix setTarget:self];
+    [matrix setCellSize:NSMakeSize(btnWidth, btnHeight)];
+    [matrix setIntercellSpacing:NSMakeSize(intercellSpacing, 0.0)];
+    
+    // --- Setup titles & tags
+    NSUInteger i = 0;
+    for(NSButtonCell *cell in [matrix cells])
+    {
+        [cell setTitle:[self.tabTitles objectAtIndex:i]];
+        [cell setTag:i];
+        
+        i++;
+    }
+    
+    
+    // --- Add subview
+    self.tabMatrixView = matrix;
+    [self addSubview:matrix];
 }
 
 

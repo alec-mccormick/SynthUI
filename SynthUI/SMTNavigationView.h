@@ -10,7 +10,9 @@
 
 @interface SMTNavigationView : NSView
 
-@property (strong, nonatomic) NSButton* testButton;
+@property (strong, nonatomic) NSArray *tabTitles;
+
+@property (strong, nonatomic) NSMatrix *tabMatrixView;
 
 
 //-(void)buttonPressed;
