@@ -18,4 +18,17 @@ enum
     SYNTH_PAGE_FX,
 };
 
+enum
+{
+    SMT_CONTROL_SIZE_SMALL,
+    SMT_CONTROL_SIZE_MED,
+    SMT_CONTROL_SIZE_LARGE
+};
+
+enum
+{
+    SMT_BUTTON_STYLE_BLUE,
+    SMT_BUTTON_STYLE_ORANGE
+};
+
 #endif /* Constants_h */

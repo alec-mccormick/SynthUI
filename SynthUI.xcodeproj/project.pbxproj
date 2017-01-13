@@ -121,13 +121,8 @@
 		26A3DCC71E25F6DB00E666EC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				26A3DCC41E25F56E00E666EC /* MiniSynthView.h */,
-				26A3DCC51E25F56E00E666EC /* MiniSynthView.m */,
+				4A33F8481E286AD70033A93B /* Base */,
 				4A33F8191E2723560033A93B /* UI */,
-				4A33F8231E2827A20033A93B /* SMTSynthView.h */,
-				4A33F8241E2827A20033A93B /* SMTSynthView.m */,
-				26A3DCC81E25F94E00E666EC /* SMTHeaderView.h */,
-				26A3DCC91E25F94E00E666EC /* SMTHeaderView.m */,
 				4A33F8351E28420A0033A93B /* Pages */,
 			);
 			name = View;
@@ -147,8 +142,8 @@
 		4A33F8191E2723560033A93B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				4A33F8151E271C8A0033A93B /* SMTConstants.h */,
-				4A33F8161E271C9A0033A93B /* SMTConstants.m */,
+				4A33F8231E2827A20033A93B /* SMTSynthView.h */,
+				4A33F8241E2827A20033A93B /* SMTSynthView.m */,
 				4A33F80A1E26EB850033A93B /* SMTButton.h */,
 				4A33F80B1E26EB850033A93B /* SMTButton.m */,
 				4A33F80D1E26EC410033A93B /* SMTButtonCell.h */,
@@ -157,6 +152,8 @@
 				4A33F8371E2851310033A93B /* SMTControlKnob.m */,
 				4A33F8391E2856A40033A93B /* SMTSpriteCell.h */,
 				4A33F83A1E2856A40033A93B /* SMTSpriteCell.m */,
+				26A3DCC81E25F94E00E666EC /* SMTHeaderView.h */,
+				26A3DCC91E25F94E00E666EC /* SMTHeaderView.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -176,6 +173,17 @@
 				4A33F8331E2842020033A93B /* SMTPageFxView.m */,
 			);
 			name = Pages;
+			sourceTree = "<group>";
+		};
+		4A33F8481E286AD70033A93B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				26A3DCC41E25F56E00E666EC /* MiniSynthView.h */,
+				26A3DCC51E25F56E00E666EC /* MiniSynthView.m */,
+				4A33F8151E271C8A0033A93B /* SMTConstants.h */,
+				4A33F8161E271C9A0033A93B /* SMTConstants.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		4AD252081E260DBD006477A7 /* App */ = {

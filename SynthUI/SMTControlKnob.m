@@ -1,4 +1,4 @@
-//
+    //
 //  SMTControlKnob.m
 //  SynthUI
 //
@@ -8,6 +8,7 @@
 
 #import "SMTControlKnob.h"
 #import "SMTSpriteCell.h"
+#import "SMTConstants.h"
 
 @implementation SMTControlKnob
 
@@ -15,10 +16,7 @@
 {
     if(self = [super initWithFrame:frameRect])
     {
-        NSImage *image = [NSImage imageNamed:@"knob_light_big_2x(1x128).png"];
-        SMTSpriteCell *cell = [[SMTSpriteCell alloc] initImageCell:image frames:128];
-        self.cell = cell;
-
+        self.cell = [SMTSpriteCell createKnobWithSize:SMT_CONTROL_SIZE_LARGE];
 //        [cell calcActiveFrame:85.0];
 //        NSImage *image = [NSImage imageNamed:@"button_big.png"];
 //        self.cell = [[SMTSpriteCell alloc] initImageCell:image frames:3];
@@ -36,5 +34,6 @@
 //    NSImage *image = [NSImage imageNamed:@"button_big.png"];
 //    [image drawInRect:dirtyRect];
 }
+
 
 @end

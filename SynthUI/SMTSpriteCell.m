@@ -7,8 +7,65 @@
 //
 
 #import "SMTSpriteCell.h"
+#import "SMTConstants.h"
 
 @implementation SMTSpriteCell
+
++ (instancetype)createKnob
+{
+    return [self createKnobWithSize:SMT_CONTROL_SIZE_SMALL];
+}
+
++ (instancetype)createKnobWithSize:(NSUInteger)size
+{
+    NSImage *image;
+    switch(size)
+    {
+        case SMT_CONTROL_SIZE_LARGE:
+            image = [NSImage imageNamed:@"knob_light_big_2x(1x128).png"];
+            return [[SMTSpriteCell alloc] initImageCell:image frames:128];
+        case SMT_CONTROL_SIZE_MED:
+            image = [NSImage imageNamed:@"knob_light_mid_2x(1x128).png"];
+            return [[SMTSpriteCell alloc] initImageCell:image frames:128];
+        case SMT_CONTROL_SIZE_SMALL:
+        default:
+            image = [NSImage imageNamed:@"knob_light_small_2x(1x128).png"];
+            return [[SMTSpriteCell alloc] initImageCell:image frames:128];
+    }
+}
+
+
++ (instancetype)createButton
+{
+    return [self createButtonWithSize:SMT_CONTROL_SIZE_SMALL];
+}
+
++ (instancetype)createButtonWithSize:(NSUInteger)size
+{
+    return [self createButtonWithSize:size style:SMT_BUTTON_STYLE_BLUE];
+}
+
++ (instancetype)createButtonWithSize:(NSUInteger)size
+                               style:(NSUInteger)style
+{
+    
+//    NSString *imageSrc;
+    NSImage *image;
+    
+    if(style == SMT_BUTTON_STYLE_BLUE)
+    {
+        
+    }
+    else
+    {
+        
+    }
+    
+    image = [NSImage imageNamed:@"button_big.png"];
+    return [[SMTSpriteCell alloc] initImageCell:image frames:3];
+}
+
+
 
 - (instancetype)init
 {
@@ -74,6 +131,34 @@
         frame = self.numFrames - 1;
     
     self.activeFrame = frame;
+}
+
+
+
+- (BOOL)startTrackingAt:(NSPoint)startPoint
+                 inView:(NSView *)controlView
+{
+    NSLog(@"start tracking!");
+//    [super startTrackingAt:startPoint inView:controlView];
+    return YES;
+}
+
+- (BOOL)continueTracking:(NSPoint)lastPoint
+                      at:(NSPoint)currentPoint
+                  inView:(NSView *)controlView
+{
+    NSLog(@"continue tracking! %f, %f", currentPoint.x, currentPoint.y);
+//    return [super continueTracking:lastPoint at:currentPoint inView:controlView];
+    return YES;
+}
+
+- (void)stopTracking:(NSPoint)lastPoint
+                  at:(NSPoint)stopPoint
+              inView:(NSView *)controlView
+           mouseIsUp:(BOOL)flag
+{
+    NSLog(@"stop tracking!");
+    return [super stopTracking:lastPoint at:stopPoint inView:controlView mouseIsUp:flag];
 }
 
 @end
