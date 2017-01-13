@@ -7,16 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "SMTNavigationView.h"
-//#import "SMTNavButtonCell.h"
-#import "SMTButton.h"
+#import "SMTSynthView.h"
 
 @interface MiniSynthView : NSView
 
-@property (strong, nonatomic) SMTNavigationView* navigationView;
+@property (strong, nonatomic) SMTSynthView* synthView;
 
-
-- (void)logRect:(NSRect)rect
-          title:(NSString*)title;
+//- (void)logRect:(NSRect)rect
+//          title:(NSString*)title;
 
 @end

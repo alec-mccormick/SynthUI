@@ -9,15 +9,13 @@
 #ifndef Constants_h
 #define Constants_h
 
-//FOUNDATION_EXPORT NSArray *const kSMTSynthPageTitles;
-
-typedef enum kSMTSynthPages
+enum
 {
     SYNTH_PAGE_KEYBOARD,
     SYNTH_PAGE_OSC,
     SYNTH_PAGE_MOD,
     SYNTH_PAGE_FILTERS,
     SYNTH_PAGE_FX,
-}
+};
 
 #endif /* Constants_h */

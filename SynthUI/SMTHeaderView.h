@@ -8,13 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SMTNavigationView : NSView
+@interface SMTHeaderView : NSView
 
 @property (strong, nonatomic) NSArray *tabTitles;
-
 @property (strong, nonatomic) NSMatrix *tabMatrixView;
-
-
-//-(void)buttonPressed;
 
 @end

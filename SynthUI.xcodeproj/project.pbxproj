@@ -12,11 +12,22 @@
 		26A3DCBA1E25F56300E666EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A3DCB91E25F56300E666EC /* Assets.xcassets */; };
 		26A3DCBD1E25F56300E666EC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A3DCBB1E25F56300E666EC /* MainMenu.xib */; };
 		26A3DCC61E25F56E00E666EC /* MiniSynthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A3DCC51E25F56E00E666EC /* MiniSynthView.m */; };
-		26A3DCCA1E25F94E00E666EC /* SMTNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A3DCC91E25F94E00E666EC /* SMTNavigationView.m */; };
+		26A3DCCA1E25F94E00E666EC /* SMTHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A3DCC91E25F94E00E666EC /* SMTHeaderView.m */; };
 		4A33F80C1E26EB850033A93B /* SMTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A33F80B1E26EB850033A93B /* SMTButton.m */; };
 		4A33F80F1E26EC410033A93B /* SMTButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A33F80E1E26EC410033A93B /* SMTButtonCell.m */; };
 		4A33F8111E270C2F0033A93B /* button_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A33F8101E270C2F0033A93B /* button_big.png */; };
 		4A33F8171E271C9A0033A93B /* SMTConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A33F8161E271C9A0033A93B /* SMTConstants.m */; };
+		4A33F8251E2827A20033A93B /* SMTSynthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A33F8241E2827A20033A93B /* SMTSynthView.m */; };
+		4A33F8281E28416E0033A93B /* SMTPageKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A33F8271E28416E0033A93B /* SMTPageKeyboardView.m */; };
+		4A33F82B1E2841B80033A93B /* SMTPageOscillatorsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A33F82A1E2841B80033A93B /* SMTPageOscillatorsView.m */; };
+		4A33F82E1E2841E20033A93B /* SMTPageModulationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A33F82D1E2841E20033A93B /* SMTPageModulationView.m */; };
+		4A33F8311E2841F70033A93B /* SMTPageFiltersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A33F8301E2841F70033A93B /* SMTPageFiltersView.m */; };
+		4A33F8341E2842020033A93B /* SMTPageFxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A33F8331E2842020033A93B /* SMTPageFxView.m */; };
+		4A33F8381E2851310033A93B /* SMTControlKnob.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A33F8371E2851310033A93B /* SMTControlKnob.m */; };
+		4A33F83B1E2856A40033A93B /* SMTSpriteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A33F83A1E2856A40033A93B /* SMTSpriteCell.m */; };
+		4A33F83F1E2859750033A93B /* knob_light_big_2x(1x128).png in Resources */ = {isa = PBXBuildFile; fileRef = 4A33F83C1E2859740033A93B /* knob_light_big_2x(1x128).png */; };
+		4A33F8401E2859750033A93B /* knob_light_mid_2x(1x128).png in Resources */ = {isa = PBXBuildFile; fileRef = 4A33F83D1E2859750033A93B /* knob_light_mid_2x(1x128).png */; };
+		4A33F8411E2859750033A93B /* knob_light_small_2x(1x128).png in Resources */ = {isa = PBXBuildFile; fileRef = 4A33F83E1E2859750033A93B /* knob_light_small_2x(1x128).png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +40,8 @@
 		26A3DCBE1E25F56300E666EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26A3DCC41E25F56E00E666EC /* MiniSynthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniSynthView.h; sourceTree = "<group>"; };
 		26A3DCC51E25F56E00E666EC /* MiniSynthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniSynthView.m; sourceTree = "<group>"; };
-		26A3DCC81E25F94E00E666EC /* SMTNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTNavigationView.h; sourceTree = "<group>"; };
-		26A3DCC91E25F94E00E666EC /* SMTNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTNavigationView.m; sourceTree = "<group>"; };
+		26A3DCC81E25F94E00E666EC /* SMTHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTHeaderView.h; sourceTree = "<group>"; };
+		26A3DCC91E25F94E00E666EC /* SMTHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTHeaderView.m; sourceTree = "<group>"; };
 		4A33F80A1E26EB850033A93B /* SMTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTButton.h; sourceTree = "<group>"; };
 		4A33F80B1E26EB850033A93B /* SMTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTButton.m; sourceTree = "<group>"; };
 		4A33F80D1E26EC410033A93B /* SMTButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTButtonCell.h; sourceTree = "<group>"; };
@@ -38,6 +49,25 @@
 		4A33F8101E270C2F0033A93B /* button_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_big.png; sourceTree = "<group>"; };
 		4A33F8151E271C8A0033A93B /* SMTConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTConstants.h; sourceTree = "<group>"; };
 		4A33F8161E271C9A0033A93B /* SMTConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTConstants.m; sourceTree = "<group>"; };
+		4A33F8231E2827A20033A93B /* SMTSynthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTSynthView.h; sourceTree = "<group>"; };
+		4A33F8241E2827A20033A93B /* SMTSynthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTSynthView.m; sourceTree = "<group>"; };
+		4A33F8261E28416E0033A93B /* SMTPageKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTPageKeyboardView.h; sourceTree = "<group>"; };
+		4A33F8271E28416E0033A93B /* SMTPageKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTPageKeyboardView.m; sourceTree = "<group>"; };
+		4A33F8291E2841B80033A93B /* SMTPageOscillatorsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTPageOscillatorsView.h; sourceTree = "<group>"; };
+		4A33F82A1E2841B80033A93B /* SMTPageOscillatorsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTPageOscillatorsView.m; sourceTree = "<group>"; };
+		4A33F82C1E2841E20033A93B /* SMTPageModulationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTPageModulationView.h; sourceTree = "<group>"; };
+		4A33F82D1E2841E20033A93B /* SMTPageModulationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTPageModulationView.m; sourceTree = "<group>"; };
+		4A33F82F1E2841F70033A93B /* SMTPageFiltersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTPageFiltersView.h; sourceTree = "<group>"; };
+		4A33F8301E2841F70033A93B /* SMTPageFiltersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTPageFiltersView.m; sourceTree = "<group>"; };
+		4A33F8321E2842020033A93B /* SMTPageFxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTPageFxView.h; sourceTree = "<group>"; };
+		4A33F8331E2842020033A93B /* SMTPageFxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTPageFxView.m; sourceTree = "<group>"; };
+		4A33F8361E2851310033A93B /* SMTControlKnob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTControlKnob.h; sourceTree = "<group>"; };
+		4A33F8371E2851310033A93B /* SMTControlKnob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTControlKnob.m; sourceTree = "<group>"; };
+		4A33F8391E2856A40033A93B /* SMTSpriteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTSpriteCell.h; sourceTree = "<group>"; };
+		4A33F83A1E2856A40033A93B /* SMTSpriteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTSpriteCell.m; sourceTree = "<group>"; };
+		4A33F83C1E2859740033A93B /* knob_light_big_2x(1x128).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "knob_light_big_2x(1x128).png"; sourceTree = "<group>"; };
+		4A33F83D1E2859750033A93B /* knob_light_mid_2x(1x128).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "knob_light_mid_2x(1x128).png"; sourceTree = "<group>"; };
+		4A33F83E1E2859750033A93B /* knob_light_small_2x(1x128).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "knob_light_small_2x(1x128).png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,11 +121,14 @@
 		26A3DCC71E25F6DB00E666EC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4A33F8191E2723560033A93B /* UI */,
 				26A3DCC41E25F56E00E666EC /* MiniSynthView.h */,
 				26A3DCC51E25F56E00E666EC /* MiniSynthView.m */,
-				26A3DCC81E25F94E00E666EC /* SMTNavigationView.h */,
-				26A3DCC91E25F94E00E666EC /* SMTNavigationView.m */,
+				4A33F8191E2723560033A93B /* UI */,
+				4A33F8231E2827A20033A93B /* SMTSynthView.h */,
+				4A33F8241E2827A20033A93B /* SMTSynthView.m */,
+				26A3DCC81E25F94E00E666EC /* SMTHeaderView.h */,
+				26A3DCC91E25F94E00E666EC /* SMTHeaderView.m */,
+				4A33F8351E28420A0033A93B /* Pages */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -103,6 +136,9 @@
 		4A33F8091E26EAE80033A93B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4A33F83C1E2859740033A93B /* knob_light_big_2x(1x128).png */,
+				4A33F83D1E2859750033A93B /* knob_light_mid_2x(1x128).png */,
+				4A33F83E1E2859750033A93B /* knob_light_small_2x(1x128).png */,
 				4A33F8101E270C2F0033A93B /* button_big.png */,
 			);
 			name = Images;
@@ -117,8 +153,29 @@
 				4A33F80B1E26EB850033A93B /* SMTButton.m */,
 				4A33F80D1E26EC410033A93B /* SMTButtonCell.h */,
 				4A33F80E1E26EC410033A93B /* SMTButtonCell.m */,
+				4A33F8361E2851310033A93B /* SMTControlKnob.h */,
+				4A33F8371E2851310033A93B /* SMTControlKnob.m */,
+				4A33F8391E2856A40033A93B /* SMTSpriteCell.h */,
+				4A33F83A1E2856A40033A93B /* SMTSpriteCell.m */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		4A33F8351E28420A0033A93B /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				4A33F8261E28416E0033A93B /* SMTPageKeyboardView.h */,
+				4A33F8271E28416E0033A93B /* SMTPageKeyboardView.m */,
+				4A33F8291E2841B80033A93B /* SMTPageOscillatorsView.h */,
+				4A33F82A1E2841B80033A93B /* SMTPageOscillatorsView.m */,
+				4A33F82C1E2841E20033A93B /* SMTPageModulationView.h */,
+				4A33F82D1E2841E20033A93B /* SMTPageModulationView.m */,
+				4A33F82F1E2841F70033A93B /* SMTPageFiltersView.h */,
+				4A33F8301E2841F70033A93B /* SMTPageFiltersView.m */,
+				4A33F8321E2842020033A93B /* SMTPageFxView.h */,
+				4A33F8331E2842020033A93B /* SMTPageFxView.m */,
+			);
+			name = Pages;
 			sourceTree = "<group>";
 		};
 		4AD252081E260DBD006477A7 /* App */ = {
@@ -190,9 +247,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A33F8411E2859750033A93B /* knob_light_small_2x(1x128).png in Resources */,
 				26A3DCBA1E25F56300E666EC /* Assets.xcassets in Resources */,
 				4A33F8111E270C2F0033A93B /* button_big.png in Resources */,
 				26A3DCBD1E25F56300E666EC /* MainMenu.xib in Resources */,
+				4A33F8401E2859750033A93B /* knob_light_mid_2x(1x128).png in Resources */,
+				4A33F83F1E2859750033A93B /* knob_light_big_2x(1x128).png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,12 +263,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A33F8311E2841F70033A93B /* SMTPageFiltersView.m in Sources */,
+				4A33F83B1E2856A40033A93B /* SMTSpriteCell.m in Sources */,
+				4A33F8281E28416E0033A93B /* SMTPageKeyboardView.m in Sources */,
+				4A33F82E1E2841E20033A93B /* SMTPageModulationView.m in Sources */,
 				4A33F80F1E26EC410033A93B /* SMTButtonCell.m in Sources */,
+				4A33F8381E2851310033A93B /* SMTControlKnob.m in Sources */,
+				4A33F8251E2827A20033A93B /* SMTSynthView.m in Sources */,
 				26A3DCC61E25F56E00E666EC /* MiniSynthView.m in Sources */,
+				4A33F8341E2842020033A93B /* SMTPageFxView.m in Sources */,
 				4A33F80C1E26EB850033A93B /* SMTButton.m in Sources */,
 				26A3DCB81E25F56300E666EC /* main.m in Sources */,
-				26A3DCCA1E25F94E00E666EC /* SMTNavigationView.m in Sources */,
+				26A3DCCA1E25F94E00E666EC /* SMTHeaderView.m in Sources */,
 				4A33F8171E271C9A0033A93B /* SMTConstants.m in Sources */,
+				4A33F82B1E2841B80033A93B /* SMTPageOscillatorsView.m in Sources */,
 				26A3DCB51E25F56300E666EC /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
