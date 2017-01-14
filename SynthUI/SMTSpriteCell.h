@@ -10,9 +10,12 @@
 
 @interface SMTSpriteCell : NSCell
 
-@property (nonatomic) NSInteger numFrames;
-@property (nonatomic) NSInteger activeFrame;
+@property(nonatomic) NSInteger numFrames;
+@property(nonatomic) NSInteger activeFrame;
 
+@property(nonatomic) NSPoint startPoint;
+@property(nonatomic) NSPoint *currentPoint;
+@property(nonatomic) NSPoint endPoint;
 
 + (instancetype)createKnob;
 + (instancetype)createKnobWithSize:(NSUInteger)size;
@@ -23,7 +26,6 @@
 
 - (instancetype)initImageCell:(NSImage *)image
                        frames:(NSInteger)frames;
-
 
 
 

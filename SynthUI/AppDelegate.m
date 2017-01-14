@@ -19,7 +19,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
     CGFloat titleBarHeight = 22.0;
-    CGSize size = CGSizeMake(1366.0, 1024.0 + titleBarHeight);
+    CGSize size = CGSizeMake(883.0, 512.0 + titleBarHeight);
     
     NSRect frame = [self.window frame];
     frame.origin.y = frame.origin.y + size.height - frame.size.height;

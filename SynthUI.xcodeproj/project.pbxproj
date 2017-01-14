@@ -107,6 +107,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		268EF2101E29B34F00A90297 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				4A33F8101E270C2F0033A93B /* button_big.png */,
+				4A33F84A1E298B370033A93B /* button_big_orange.png */,
+				4A33F84C1E298B370033A93B /* button_small.png */,
+				4A33F84B1E298B370033A93B /* button_small_orange.png */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		268EF2111E29B35C00A90297 /* Knobs */ = {
+			isa = PBXGroup;
+			children = (
+				4A33F83C1E2859740033A93B /* knob_light_big_2x(1x128).png */,
+				4A33F83D1E2859750033A93B /* knob_light_mid_2x(1x128).png */,
+				4A33F83E1E2859750033A93B /* knob_light_small_2x(1x128).png */,
+				4A33F8501E298C2F0033A93B /* knob_dark_big_2x(1x128).png */,
+				4A33F8511E298C2F0033A93B /* knob_dark_mid_2x(1x128).png */,
+				4A33F8521E298C2F0033A93B /* knob_dark_small_2x(1x128).png */,
+			);
+			name = Knobs;
+			sourceTree = "<group>";
+		};
 		26A3DCA71E25F56300E666EC = {
 			isa = PBXGroup;
 			children = (
@@ -157,16 +181,8 @@
 		4A33F8091E26EAE80033A93B /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				4A33F8101E270C2F0033A93B /* button_big.png */,
-				4A33F84A1E298B370033A93B /* button_big_orange.png */,
-				4A33F84C1E298B370033A93B /* button_small.png */,
-				4A33F84B1E298B370033A93B /* button_small_orange.png */,
-				4A33F83C1E2859740033A93B /* knob_light_big_2x(1x128).png */,
-				4A33F83D1E2859750033A93B /* knob_light_mid_2x(1x128).png */,
-				4A33F83E1E2859750033A93B /* knob_light_small_2x(1x128).png */,
-				4A33F8501E298C2F0033A93B /* knob_dark_big_2x(1x128).png */,
-				4A33F8511E298C2F0033A93B /* knob_dark_mid_2x(1x128).png */,
-				4A33F8521E298C2F0033A93B /* knob_dark_small_2x(1x128).png */,
+				268EF2101E29B34F00A90297 /* Buttons */,
+				268EF2111E29B35C00A90297 /* Knobs */,
 				4A33F8581E298CC20033A93B /* led_hover.png */,
 				4A33F8591E298CC20033A93B /* led_off.png */,
 				4A33F85A1E298CC20033A93B /* led_on.png */,

@@ -7,7 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SMTSpriteCell.h"
 
 @interface SMTControlKnob : NSControl
+
+//@property (strong) SMTSpriteCell *cell;
+@property (nonatomic) CGFloat controlValue;
+
+
+- (IBAction)handleCellTrackingStart:(SMTSpriteCell *)sender;
+- (IBAction)handleCellTrackingContinue:(SMTSpriteCell *)sender;
+- (IBAction)handleCellTrackingEnd:(SMTSpriteCell *)sender;
 
 @end

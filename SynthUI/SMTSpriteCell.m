@@ -8,65 +8,83 @@
 
 #import "SMTSpriteCell.h"
 #import "SMTConstants.h"
+#import "SMTControlKnob.h"
 
+// =================================================================
+// --- Private properties
+// =================================================================
+@interface SMTSpriteCell ()
+
+@property(weak) id _target;
+@property SEL _action;
+
+@end
+
+// =================================================================
+// --- Class methods for creating cells
+// =================================================================
 @implementation SMTSpriteCell
 
 + (instancetype)createKnob
 {
-    return [self createKnobWithSize:SMT_CONTROL_SIZE_SMALL];
+    return [self createKnobWithSize:SMT_CONTROL_SIZE_DEFAULT];
 }
 
 + (instancetype)createKnobWithSize:(NSUInteger)size
 {
-    NSImage *image;
+    NSString *imageSrc;
     switch(size)
     {
         case SMT_CONTROL_SIZE_LARGE:
-            image = [NSImage imageNamed:@"knob_light_big_2x(1x128).png"];
-            return [[SMTSpriteCell alloc] initImageCell:image frames:128];
+            imageSrc = SMT_SRC_KNOB_LARGE;
+            break;
         case SMT_CONTROL_SIZE_MED:
-            image = [NSImage imageNamed:@"knob_light_mid_2x(1x128).png"];
-            return [[SMTSpriteCell alloc] initImageCell:image frames:128];
+            imageSrc = SMT_SRC_KNOB_MED;
+            break;
         case SMT_CONTROL_SIZE_SMALL:
         default:
-            image = [NSImage imageNamed:@"knob_light_small_2x(1x128).png"];
-            return [[SMTSpriteCell alloc] initImageCell:image frames:128];
+            imageSrc = SMT_SRC_KNOB_SMALL;
+            break;
     }
+    SMTSpriteCell *cell = [[SMTSpriteCell alloc] initImageCell:[NSImage imageNamed:imageSrc] frames:SMT_NUM_FRAMES_KNOB];
+    cell.continuous = YES;
+    
+    return cell;
 }
 
 
 + (instancetype)createButton
 {
-    return [self createButtonWithSize:SMT_CONTROL_SIZE_SMALL];
+    return [self createButtonWithSize:SMT_BUTTON_SIZE_DEFAULT];
 }
 
 + (instancetype)createButtonWithSize:(NSUInteger)size
 {
-    return [self createButtonWithSize:size style:SMT_BUTTON_STYLE_BLUE];
+    return [self createButtonWithSize:size style:SMT_BUTTON_STYLE_DEFAULT];
 }
 
 + (instancetype)createButtonWithSize:(NSUInteger)size
                                style:(NSUInteger)style
 {
     
-//    NSString *imageSrc;
-    NSImage *image;
+    NSString *imageSrc;
     
+    // --- TODO
     if(style == SMT_BUTTON_STYLE_BLUE)
     {
-        
+        imageSrc = SMT_SRC_BUTTON_BLUE_LARGE;
     }
     else
     {
-        
+        imageSrc = SMT_SRC_BUTTON_BLUE_LARGE;
     }
     
-    image = [NSImage imageNamed:@"button_big.png"];
-    return [[SMTSpriteCell alloc] initImageCell:image frames:3];
+    return [[SMTSpriteCell alloc] initImageCell:[NSImage imageNamed:imageSrc] frames:SMT_NUM_FRAMES_BUTTON];
 }
 
-
-
+// =================================================================
+// --- Initialization
+// =================================================================
 - (instancetype)init
 {
     if(self = [super init])
@@ -107,23 +125,42 @@
     return self;
 }
 
+// =================================================================
+// --- Getters/Setters
+// =================================================================
+- (void)setTarget:(id)target
+{
+    self._target = target;
+}
+- (id)getTarget
+{
+    return self._target;
+}
+- (void)setAction:(SEL)action
+{
+    self._action = action;
+}
+- (SEL)getAction
+{
+    return self._action;
+}
 
+// =================================================================
+// --- Render
+// =================================================================
 - (void)drawInteriorWithFrame:(NSRect)cellFrame
                        inView:(NSView *)controlView
 {
 //    [super drawInteriorWithFrame:cellFrame inView:controlView];
-    NSLog(@"Draw interior with frame!");
+//    NSLog(@"Draw interior with frame!");
     
     CGFloat height = cellFrame.size.height;
     CGFloat width = cellFrame.size.width;
     
-//    NSLog(@"Knob image height:%f",self.image.size.height);
-//    NSLog(@"Num frames: %u, height: %f, active: %u, combined: %f", self.numFrames, height, self.activeFrame, -(self.numFrames - 1 - self.activeFrame) * height);
-    
     [self.image drawInRect:NSMakeRect(0.0, (self.activeFrame + 1 - self.numFrames) * height, width, self.numFrames * height)];
 }
 
-- (void)calcActiveFrame:(CGFloat)value
+- (void)calcActiveFrame:(CGFloat)value // Expects value between 0 -> 100
 {
     NSInteger frame = (NSInteger) (floor(self.numFrames * value/100.0));
     
@@ -131,25 +168,37 @@
         frame = self.numFrames - 1;
     
     self.activeFrame = frame;
+    
+//    NSLog(@"calc new frame:%i value:%f", self.activeFrame, value);
 }
 
 
-
+// =================================================================
+// --- Actions/Events
+// =================================================================
 - (BOOL)startTrackingAt:(NSPoint)startPoint
                  inView:(NSView *)controlView
 {
-    NSLog(@"start tracking!");
-//    [super startTrackingAt:startPoint inView:controlView];
-    return YES;
+    self.startPoint = startPoint;
+    
+    if([self._target respondsToSelector:@selector(handleCellTrackingStart:)])
+        [self._target performSelector:@selector(handleCellTrackingStart:) withObject:self];
+    
+//    NSLog(@"Start tracking: x:%f, y:%f", startPoint.x, startPoint.y);
+    return [super startTrackingAt:startPoint inView:controlView];
 }
 
 - (BOOL)continueTracking:(NSPoint)lastPoint
                       at:(NSPoint)currentPoint
                   inView:(NSView *)controlView
 {
-    NSLog(@"continue tracking! %f, %f", currentPoint.x, currentPoint.y);
-//    return [super continueTracking:lastPoint at:currentPoint inView:controlView];
-    return YES;
+    self.currentPoint = &currentPoint;
+    
+    if([self._target respondsToSelector:@selector(handleCellTrackingContinue:)])
+        [self._target performSelector:@selector(handleCellTrackingContinue:) withObject:self];
+    
+//    NSLog(@"Continue tracking: x:%f, y:%f", currentPoint.x, currentPoint.y);
+    return [super continueTracking:lastPoint at:currentPoint inView:controlView];
 }
 
 - (void)stopTracking:(NSPoint)lastPoint
@@ -157,8 +206,21 @@
               inView:(NSView *)controlView
            mouseIsUp:(BOOL)flag
 {
-    NSLog(@"stop tracking!");
-    return [super stopTracking:lastPoint at:stopPoint inView:controlView mouseIsUp:flag];
+//    self.startPoint = nil;
+    self.currentPoint = nil;
+    self.endPoint = stopPoint;
+    
+    if([self._target respondsToSelector:@selector(handleCellTrackingEnd:)])
+        [self._target performSelector:@selector(handleCellTrackingEnd:) withObject:self];
+    
+    [super stopTracking:lastPoint at:stopPoint inView:controlView mouseIsUp:flag];
+}
+
+- (void)getPeriodicDelay:(float *)delay
+                interval:(float *)interval
+{
+    *delay = 0.1;
+    *interval = 0.025;
 }
 
 @end
