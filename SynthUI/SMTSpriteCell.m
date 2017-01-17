@@ -33,13 +33,16 @@
 + (instancetype)createKnobWithSize:(NSUInteger)size
 {
     NSString *imageSrc;
+    NSString *scaleSrc;
     switch(size)
     {
         case SMT_CONTROL_SIZE_LARGE:
             imageSrc = SMT_SRC_KNOB_LARGE;
+            scaleSrc = SMT_SRC_KNOB_SCALE_LARGE;
             break;
         case SMT_CONTROL_SIZE_MED:
             imageSrc = SMT_SRC_KNOB_MED;
+            scaleSrc = SMT_SRC_KNOB_SCALE_MED;
             break;
         case SMT_CONTROL_SIZE_SMALL:
         default:
@@ -47,6 +50,7 @@
             break;
     }
     SMTSpriteCell *cell = [[SMTSpriteCell alloc] initImageCell:[NSImage imageNamed:imageSrc] frames:SMT_NUM_FRAMES_KNOB];
+    
     cell.continuous = YES;
     
     return cell;

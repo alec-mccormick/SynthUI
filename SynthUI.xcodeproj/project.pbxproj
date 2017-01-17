@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		268EF2141E2DA58A00A90297 /* knob_big_scale.png in Resources */ = {isa = PBXBuildFile; fileRef = 268EF2121E2DA58A00A90297 /* knob_big_scale.png */; };
+		268EF2151E2DA58A00A90297 /* knob_mid_scale.png in Resources */ = {isa = PBXBuildFile; fileRef = 268EF2131E2DA58A00A90297 /* knob_mid_scale.png */; };
 		26A3DCB51E25F56300E666EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A3DCB41E25F56300E666EC /* AppDelegate.m */; };
 		26A3DCB81E25F56300E666EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A3DCB71E25F56300E666EC /* main.m */; };
 		26A3DCBA1E25F56300E666EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A3DCB91E25F56300E666EC /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		268EF2121E2DA58A00A90297 /* knob_big_scale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knob_big_scale.png; sourceTree = "<group>"; };
+		268EF2131E2DA58A00A90297 /* knob_mid_scale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knob_mid_scale.png; sourceTree = "<group>"; };
 		26A3DCB01E25F56300E666EC /* SynthUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SynthUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A3DCB31E25F56300E666EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		26A3DCB41E25F56300E666EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 		268EF2111E29B35C00A90297 /* Knobs */ = {
 			isa = PBXGroup;
 			children = (
+				268EF2121E2DA58A00A90297 /* knob_big_scale.png */,
+				268EF2131E2DA58A00A90297 /* knob_mid_scale.png */,
 				4A33F83C1E2859740033A93B /* knob_light_big_2x(1x128).png */,
 				4A33F83D1E2859750033A93B /* knob_light_mid_2x(1x128).png */,
 				4A33F83E1E2859750033A93B /* knob_light_small_2x(1x128).png */,
@@ -313,12 +319,14 @@
 				4A33F8641E298D490033A93B /* fader_with_shadow.png in Resources */,
 				4A33F8541E298C2F0033A93B /* knob_dark_mid_2x(1x128).png in Resources */,
 				4A33F8551E298C2F0033A93B /* knob_dark_small_2x(1x128).png in Resources */,
+				268EF2141E2DA58A00A90297 /* knob_big_scale.png in Resources */,
 				4A33F8411E2859750033A93B /* knob_light_small_2x(1x128).png in Resources */,
 				4A33F84E1E298B370033A93B /* button_small_orange.png in Resources */,
 				4A33F8531E298C2F0033A93B /* knob_dark_big_2x(1x128).png in Resources */,
 				4A33F8651E298D490033A93B /* scale.png in Resources */,
 				4A33F84D1E298B370033A93B /* button_big_orange.png in Resources */,
 				26A3DCBA1E25F56300E666EC /* Assets.xcassets in Resources */,
+				268EF2151E2DA58A00A90297 /* knob_mid_scale.png in Resources */,
 				4A33F8111E270C2F0033A93B /* button_big.png in Resources */,
 				26A3DCBD1E25F56300E666EC /* MainMenu.xib in Resources */,
 				4A33F85B1E298CC20033A93B /* led_hover.png in Resources */,
@@ -462,6 +470,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2C2PMAPW3B;
 				INFOPLIST_FILE = SynthUI/Info.plist;
@@ -475,6 +484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2C2PMAPW3B;
 				INFOPLIST_FILE = SynthUI/Info.plist;

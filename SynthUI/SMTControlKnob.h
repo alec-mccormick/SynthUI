@@ -14,6 +14,7 @@
 //@property (strong) SMTSpriteCell *cell;
 @property (nonatomic) CGFloat controlValue;
 
+@property (strong) SMTSpriteCell *knobCell;
 
 - (IBAction)handleCellTrackingStart:(SMTSpriteCell *)sender;
 - (IBAction)handleCellTrackingContinue:(SMTSpriteCell *)sender;

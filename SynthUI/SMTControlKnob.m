@@ -36,9 +36,22 @@
         self.controlValue = 0.0;
         self.lastControlValue = 0.0;
         
-        self.cell = [SMTSpriteCell createKnobWithSize:size];
-        [self.cell setTarget:self];
+        self.knobCell = [SMTSpriteCell createKnobWithSize:size];
+        
+        if(size == SMT_CONTROL_SIZE_SMALL)
+        {
+            self.cell = self.knobCell;
+        }
+        else
+        {
+            NSString *scaleSrc = (size == SMT_CONTROL_SIZE_LARGE) ? SMT_SRC_KNOB_SCALE_LARGE : SMT_SRC_KNOB_SCALE_MED;
+            
+            self.cell = [[NSCell alloc] initImageCell:[NSImage imageNamed:scaleSrc]];
+        }
+        
+        [self.knobCell setTarget:self];
         self.continuous = YES;
+        
     }
     return self;
 }
@@ -53,7 +66,7 @@
     else
         self.controlValue = newValue;
     
-    [self.cell calcActiveFrame:self.controlValue];
+    [self.knobCell calcActiveFrame:self.controlValue];
     [self setNeedsDisplay:YES];
 }
 // =================================================================
@@ -61,12 +74,12 @@
 // =================================================================
 - (void)mouseDown:(NSEvent *)event
 {
-    [self.cell trackMouse:event inRect:self.frame ofView:self untilMouseUp:YES];
+    [self.knobCell trackMouse:event inRect:self.frame ofView:self untilMouseUp:YES];
 }
 
 - (IBAction)handleCellTrackingStart:(SMTSpriteCell *)sender
 {
-//    NSLog(@"Cell tracking start!");
+//     NSLog(@"Cell tracking start!");
     self.lastControlValue = self.controlValue;
 }
 
@@ -81,6 +94,14 @@
 
 - (IBAction)handleCellTrackingEnd:(SMTSpriteCell *)sender
 {
+}
+
+
+
+- (void)drawRect:(NSRect)dirtyRect
+{
+    NSLog(@"Draw Rect");
+    [super drawRect:dirtyRect];
 }
 
 

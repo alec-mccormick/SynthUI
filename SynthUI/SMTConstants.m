@@ -20,6 +20,8 @@ NSString *const SMT_SRC_BUTTON_ORANGE_SMALL = @"button_small_orange.png";
 NSString *const SMT_SRC_KNOB_LARGE = @"knob_light_big_2x(1x128).png";
 NSString *const SMT_SRC_KNOB_MED = @"knob_light_mid_2x(1x128).png";
 NSString *const SMT_SRC_KNOB_SMALL = @"knob_light_small_2x(1x128).png";
+NSString *const SMT_SRC_KNOB_SCALE_LARGE = @"knob_big_scale.png";
+NSString *const SMT_SRC_KNOB_SCALE_MED  = @"knob_mid_scale.png";
 
 NSInteger const SMT_NUM_FRAMES_BUTTON = 3;
 NSInteger const SMT_NUM_FRAMES_KNOB = 128;
