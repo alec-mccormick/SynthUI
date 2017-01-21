@@ -25,11 +25,11 @@
 
 - (instancetype)initWithFrame:(NSRect)frameRect
 {
-    return [self initWithFrame:frameRect withSize:SMT_CONTROL_SIZE_DEFAULT];
+    return [self initWithFrame:frameRect size:SMT_CONTROL_SIZE_DEFAULT];
 }
 
 - (instancetype)initWithFrame:(NSRect)frameRect
-                     withSize:(NSUInteger)size
+                     size:(NSUInteger)size
 {
     if(self = [super initWithFrame:frameRect])
     {
@@ -101,7 +101,18 @@
 - (void)drawRect:(NSRect)dirtyRect
 {
     NSLog(@"Draw Rect");
-    [super drawRect:dirtyRect];
+    
+
+    if(self.cell != self.knobCell)
+    {
+//        [super drawRect:NSMakeRect(dirtyRect.origin.x, 50.0, dirtyRect.size.width, dirtyRect.size.height/2.0)];
+        
+        [self.cell drawWithFrame:NSMakeRect(0.0, 5.0, 161.0, 163.0) inView:self];
+        [self.knobCell drawWithFrame:NSMakeRect(6.0, 0.0, 148.0, 148.0) inView:self];
+    } else
+    {
+        [super drawRect:dirtyRect];
+    }
 }
 
 

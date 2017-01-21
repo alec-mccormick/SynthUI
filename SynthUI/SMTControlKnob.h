@@ -16,6 +16,11 @@
 
 @property (strong) SMTSpriteCell *knobCell;
 
+- (instancetype)initWithFrame:(NSRect)frameRect
+                         size:(NSUInteger)size;
+
+- (void)updateControlValue:(CGFloat)newValue;
+
 - (IBAction)handleCellTrackingStart:(SMTSpriteCell *)sender;
 - (IBAction)handleCellTrackingContinue:(SMTSpriteCell *)sender;
 - (IBAction)handleCellTrackingEnd:(SMTSpriteCell *)sender;

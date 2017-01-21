@@ -25,7 +25,7 @@
         [self addSubview:text];
         
         // --- Test knob
-        SMTControlKnob *knob = [[SMTControlKnob alloc] initWithFrame:NSMakeRect(200.0, 100.0, 28.0, 28.0)];
+        SMTControlKnob *knob = [[SMTControlKnob alloc] initWithFrame:NSMakeRect(200.0, 100.0, 161.0, 168.0) size:SMT_CONTROL_SIZE_LARGE];
         [self addSubview:knob];
     }
     

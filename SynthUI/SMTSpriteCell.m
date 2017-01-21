@@ -161,7 +161,7 @@
     CGFloat height = cellFrame.size.height;
     CGFloat width = cellFrame.size.width;
     
-    [self.image drawInRect:NSMakeRect(0.0, (self.activeFrame + 1 - self.numFrames) * height, width, self.numFrames * height)];
+    [self.image drawInRect:NSMakeRect(cellFrame.origin.x, cellFrame.origin.y + (self.activeFrame + 1 - self.numFrames) * height, width, self.numFrames * height)];
 }
 
 - (void)calcActiveFrame:(CGFloat)value // Expects value between 0 -> 100
