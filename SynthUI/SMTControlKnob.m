@@ -7,7 +7,6 @@
 //
 
 #import "SMTControlKnob.h"
-#import "SMTConstants.h"
 
 // =================================================================
 // --- Private properties
@@ -18,11 +17,13 @@
 
 @end
 
+
+
+@implementation SMTControlKnob
+
 // =================================================================
 // --- Initialization
 // =================================================================
-@implementation SMTControlKnob
-
 - (instancetype)initWithFrame:(NSRect)frameRect
 {
     return [self initWithFrame:frameRect size:SMT_CONTROL_SIZE_DEFAULT];
@@ -36,37 +37,35 @@
         self.controlValue = 0.0;
         self.lastControlValue = 0.0;
         
-        self.knobCell = [SMTSpriteCell createKnobWithSize:size];
+        self.cell = [SMTSpriteCell createKnobWithSize:size];
         
-        if(size == SMT_CONTROL_SIZE_SMALL)
+        switch(size)
         {
-            self.cell = self.knobCell;
-        }
-        else
-        {
-            NSString *scaleSrc = (size == SMT_CONTROL_SIZE_LARGE) ? SMT_SRC_KNOB_SCALE_LARGE : SMT_SRC_KNOB_SCALE_MED;
-            
-            self.cell = [[NSCell alloc] initImageCell:[NSImage imageNamed:scaleSrc]];
+            case SMT_CONTROL_SIZE_LARGE:
+                self.scaleImage = [NSImage imageNamed:SMT_SRC_KNOB_SCALE_LARGE];
+                self.meta = SMT_CONTROL_KNOB_META_LARGE;
+                break;
+            case SMT_CONTROL_SIZE_MED:
+                self.scaleImage = [NSImage imageNamed:SMT_SRC_KNOB_SCALE_MED];
+                self.meta = SMT_CONTROL_KNOB_META_MED;
+                break;
+            case SMT_CONTROL_SIZE_SMALL:
+            default:
+                self.meta = SMT_CONTROL_KNOB_META_SMALL;
+                break;
         }
         
-        [self.knobCell setTarget:self];
+        [self.cell setTarget:self];
         self.continuous = YES;
-        
     }
     return self;
 }
 
 - (void)updateControlValue:(CGFloat)newValue
 {
+    self.controlValue = MAX(MIN(newValue, 100), 0);
     
-    if(newValue > 100.0)
-        self.controlValue = 100.0;
-    else if(newValue < 0.0)
-        self.controlValue = 0.0;
-    else
-        self.controlValue = newValue;
-    
-    [self.knobCell calcActiveFrame:self.controlValue];
+    [self.cell calcActiveFrame:self.controlValue];
     [self setNeedsDisplay:YES];
 }
 // =================================================================
@@ -74,12 +73,11 @@
 // =================================================================
 - (void)mouseDown:(NSEvent *)event
 {
-    [self.knobCell trackMouse:event inRect:self.frame ofView:self untilMouseUp:YES];
+    [self.cell trackMouse:event inRect:self.frame ofView:self untilMouseUp:YES];
 }
 
 - (IBAction)handleCellTrackingStart:(SMTSpriteCell *)sender
 {
-//     NSLog(@"Cell tracking start!");
     self.lastControlValue = self.controlValue;
 }
 
@@ -93,26 +91,32 @@
 }
 
 - (IBAction)handleCellTrackingEnd:(SMTSpriteCell *)sender
-{
+{  
 }
 
 
-
+// =================================================================
+// --- Draw
+// =================================================================
 - (void)drawRect:(NSRect)dirtyRect
 {
-    NSLog(@"Draw Rect");
+    CGPoint pos = self.meta.pos;
+    CGSize size = self.meta.size;
     
-
-    if(self.cell != self.knobCell)
+    CGFloat ratioWidth = dirtyRect.size.width/size.width;
+    CGFloat ratioHeight = dirtyRect.size.height/size.height;
+    
+    if(self.scaleImage)
     {
-//        [super drawRect:NSMakeRect(dirtyRect.origin.x, 50.0, dirtyRect.size.width, dirtyRect.size.height/2.0)];
+        CGPoint scalePos = self.meta.scalePos;
         
-        [self.cell drawWithFrame:NSMakeRect(0.0, 5.0, 161.0, 163.0) inView:self];
-        [self.knobCell drawWithFrame:NSMakeRect(6.0, 0.0, 148.0, 148.0) inView:self];
-    } else
-    {
-        [super drawRect:dirtyRect];
+        NSRect scaleRect = NSMakeRect(scalePos.x * ratioWidth, scalePos.y * ratioHeight, self.scaleImage.size.width * ratioWidth, self.scaleImage.size.height * ratioHeight);
+    
+        [self.scaleImage drawInRect:scaleRect fromRect:NSMakeRect(0.0, 0.0, self.scaleImage.size.width, self.scaleImage.size.height) operation:NSCompositingOperationSourceOver fraction:1.0];
     }
+    
+    NSRect knobRect = NSMakeRect(pos.x * ratioWidth, pos.y * ratioHeight, self.cell.image.size.width * ratioWidth, self.cell.image.size.width * ratioHeight);
+    [self.cell drawWithFrame:knobRect inView:self];
 }
 
 

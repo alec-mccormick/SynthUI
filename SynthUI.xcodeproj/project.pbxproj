@@ -15,6 +15,8 @@
 		26A3DCBD1E25F56300E666EC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A3DCBB1E25F56300E666EC /* MainMenu.xib */; };
 		26A3DCC61E25F56E00E666EC /* MiniSynthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A3DCC51E25F56E00E666EC /* MiniSynthView.m */; };
 		26A3DCCA1E25F94E00E666EC /* SMTHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A3DCC91E25F94E00E666EC /* SMTHeaderView.m */; };
+		26E6F1AE1E9EFD1E00D5B249 /* SMTOscillatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E6F1AD1E9EFD1E00D5B249 /* SMTOscillatorView.m */; };
+		26E6F1B11E9F00C800D5B249 /* SMTDropdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E6F1B01E9F00C800D5B249 /* SMTDropdown.m */; };
 		4A33F80C1E26EB850033A93B /* SMTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A33F80B1E26EB850033A93B /* SMTButton.m */; };
 		4A33F80F1E26EC410033A93B /* SMTButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A33F80E1E26EC410033A93B /* SMTButtonCell.m */; };
 		4A33F8111E270C2F0033A93B /* button_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A33F8101E270C2F0033A93B /* button_big.png */; };
@@ -59,6 +61,10 @@
 		26A3DCC51E25F56E00E666EC /* MiniSynthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniSynthView.m; sourceTree = "<group>"; };
 		26A3DCC81E25F94E00E666EC /* SMTHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTHeaderView.h; sourceTree = "<group>"; };
 		26A3DCC91E25F94E00E666EC /* SMTHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTHeaderView.m; sourceTree = "<group>"; };
+		26E6F1AC1E9EFD1E00D5B249 /* SMTOscillatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTOscillatorView.h; sourceTree = "<group>"; };
+		26E6F1AD1E9EFD1E00D5B249 /* SMTOscillatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTOscillatorView.m; sourceTree = "<group>"; };
+		26E6F1AF1E9F00C800D5B249 /* SMTDropdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTDropdown.h; sourceTree = "<group>"; };
+		26E6F1B01E9F00C800D5B249 /* SMTDropdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTDropdown.m; sourceTree = "<group>"; };
 		4A33F80A1E26EB850033A93B /* SMTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTButton.h; sourceTree = "<group>"; };
 		4A33F80B1E26EB850033A93B /* SMTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTButton.m; sourceTree = "<group>"; };
 		4A33F80D1E26EC410033A93B /* SMTButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTButtonCell.h; sourceTree = "<group>"; };
@@ -180,8 +186,22 @@
 				4A33F8481E286AD70033A93B /* Base */,
 				4A33F8191E2723560033A93B /* UI */,
 				4A33F8351E28420A0033A93B /* Pages */,
+				26E6F1AB1E9EFB9500D5B249 /* Views */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		26E6F1AB1E9EFB9500D5B249 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A33F8231E2827A20033A93B /* SMTSynthView.h */,
+				4A33F8241E2827A20033A93B /* SMTSynthView.m */,
+				26A3DCC81E25F94E00E666EC /* SMTHeaderView.h */,
+				26A3DCC91E25F94E00E666EC /* SMTHeaderView.m */,
+				26E6F1AC1E9EFD1E00D5B249 /* SMTOscillatorView.h */,
+				26E6F1AD1E9EFD1E00D5B249 /* SMTOscillatorView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		4A33F8091E26EAE80033A93B /* Images */ = {
@@ -203,18 +223,16 @@
 		4A33F8191E2723560033A93B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				4A33F8231E2827A20033A93B /* SMTSynthView.h */,
-				4A33F8241E2827A20033A93B /* SMTSynthView.m */,
 				4A33F80A1E26EB850033A93B /* SMTButton.h */,
 				4A33F80B1E26EB850033A93B /* SMTButton.m */,
 				4A33F80D1E26EC410033A93B /* SMTButtonCell.h */,
 				4A33F80E1E26EC410033A93B /* SMTButtonCell.m */,
-				4A33F8361E2851310033A93B /* SMTControlKnob.h */,
-				4A33F8371E2851310033A93B /* SMTControlKnob.m */,
 				4A33F8391E2856A40033A93B /* SMTSpriteCell.h */,
 				4A33F83A1E2856A40033A93B /* SMTSpriteCell.m */,
-				26A3DCC81E25F94E00E666EC /* SMTHeaderView.h */,
-				26A3DCC91E25F94E00E666EC /* SMTHeaderView.m */,
+				4A33F8361E2851310033A93B /* SMTControlKnob.h */,
+				4A33F8371E2851310033A93B /* SMTControlKnob.m */,
+				26E6F1AF1E9F00C800D5B249 /* SMTDropdown.h */,
+				26E6F1B01E9F00C800D5B249 /* SMTDropdown.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -347,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26E6F1B11E9F00C800D5B249 /* SMTDropdown.m in Sources */,
 				4A33F8311E2841F70033A93B /* SMTPageFiltersView.m in Sources */,
 				4A33F83B1E2856A40033A93B /* SMTSpriteCell.m in Sources */,
 				4A33F8281E28416E0033A93B /* SMTPageKeyboardView.m in Sources */,
@@ -356,6 +375,7 @@
 				4A33F8251E2827A20033A93B /* SMTSynthView.m in Sources */,
 				26A3DCC61E25F56E00E666EC /* MiniSynthView.m in Sources */,
 				4A33F8341E2842020033A93B /* SMTPageFxView.m in Sources */,
+				26E6F1AE1E9EFD1E00D5B249 /* SMTOscillatorView.m in Sources */,
 				4A33F80C1E26EB850033A93B /* SMTButton.m in Sources */,
 				26A3DCB81E25F56300E666EC /* main.m in Sources */,
 				26A3DCCA1E25F94E00E666EC /* SMTHeaderView.m in Sources */,

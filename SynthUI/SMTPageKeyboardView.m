@@ -8,6 +8,8 @@
 
 #import "SMTPageKeyboardView.h"
 #import "SMTControlKnob.h"
+#import "SMTDropdown.h"
+
 
 @implementation SMTPageKeyboardView
 
@@ -25,8 +27,18 @@
         [self addSubview:text];
         
         // --- Test knob
-        SMTControlKnob *knob = [[SMTControlKnob alloc] initWithFrame:NSMakeRect(200.0, 100.0, 161.0, 168.0) size:SMT_CONTROL_SIZE_LARGE];
-        [self addSubview:knob];
+//        SMTControlKnob *knob = [[SMTControlKnob alloc] initWithFrame:NSMakeRect(200.0, 100.0, 56.0, 56.0) size:SMT_CONTROL_SIZE_SMALL];
+//        [self addSubview:knob];
+        
+        // --- Test Dropdown
+        NSRect frame = NSMakeRect(200.0, 100.0, 140.0, 20.0);
+        SMTDropdown *dropdown = [[SMTDropdown alloc] initWithFrame:frame pullsDown:YES];
+        
+        NSArray *options = @[@"Sine", @"Saw", @"Square", @"Triangle"];
+        [dropdown addItemsWithTitles:options];
+        [dropdown setColor:[NSColor whiteColor]];
+        
+        [self addSubview:dropdown];
     }
     
     return self;

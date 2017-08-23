@@ -8,13 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 #import "SMTSpriteCell.h"
+#import "SMTConstants.h"
 
 @interface SMTControlKnob : NSControl
 
-//@property (strong) SMTSpriteCell *cell;
-@property (nonatomic) CGFloat controlValue;
 
-@property (strong) SMTSpriteCell *knobCell;
+@property (nonatomic) CGFloat controlValue;
+@property (strong) NSImage *scaleImage;
+
+@property (nonatomic) SMTControlKnobMeta meta;
+
 
 - (instancetype)initWithFrame:(NSRect)frameRect
                          size:(NSUInteger)size;

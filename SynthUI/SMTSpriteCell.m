@@ -33,16 +33,13 @@
 + (instancetype)createKnobWithSize:(NSUInteger)size
 {
     NSString *imageSrc;
-    NSString *scaleSrc;
     switch(size)
     {
         case SMT_CONTROL_SIZE_LARGE:
             imageSrc = SMT_SRC_KNOB_LARGE;
-            scaleSrc = SMT_SRC_KNOB_SCALE_LARGE;
             break;
         case SMT_CONTROL_SIZE_MED:
             imageSrc = SMT_SRC_KNOB_MED;
-            scaleSrc = SMT_SRC_KNOB_SCALE_MED;
             break;
         case SMT_CONTROL_SIZE_SMALL:
         default:
@@ -70,18 +67,10 @@
 + (instancetype)createButtonWithSize:(NSUInteger)size
                                style:(NSUInteger)style
 {
+    NSString *imageSrc = (style == SMT_BUTTON_STYLE_BLUE)
+        ? (size == SMT_CONTROL_SIZE_LARGE) ? SMT_SRC_BUTTON_BLUE_LARGE : SMT_SRC_BUTTON_BLUE_SMALL
+        : (size == SMT_CONTROL_SIZE_LARGE) ? SMT_SRC_BUTTON_ORANGE_LARGE : SMT_SRC_BUTTON_ORANGE_SMALL;
     
-    NSString *imageSrc;
-    
-    // --- TODO
-    if(style == SMT_BUTTON_STYLE_BLUE)
-    {
-        imageSrc = SMT_SRC_BUTTON_BLUE_LARGE;
-    }
-    else
-    {
-        imageSrc = SMT_SRC_BUTTON_BLUE_LARGE;
-    }
     
     return [[SMTSpriteCell alloc] initImageCell:[NSImage imageNamed:imageSrc] frames:SMT_NUM_FRAMES_BUTTON];
 }
@@ -95,6 +84,9 @@
     {
         self.numFrames = 1;
         self.activeFrame = 0;
+        
+        self.frameWidth = 0;
+        self.frameHeight = 0;
     }
     
     return self;
@@ -106,6 +98,9 @@
     {
         self.numFrames = 1;
         self.activeFrame = 0;
+        
+        self.frameWidth = 0;
+        self.frameHeight = 0;
     }
     
     return self;
@@ -124,6 +119,9 @@
         self.numFrames = frames;
         self.activeFrame = 0;
         [self setType:NSImageCellType];
+        
+        self.frameWidth = self.image.size.height/frames;
+        self.frameHeight = self.image.size.width;
     }
     
     return self;
@@ -156,20 +154,18 @@
                        inView:(NSView *)controlView
 {
 //    [super drawInteriorWithFrame:cellFrame inView:controlView];
-//    NSLog(@"Draw interior with frame!");
+//    NSLog(@"Draw interior with frame! %@", NSStringFromRect(cellFrame));
     
-    CGFloat height = cellFrame.size.height;
-    CGFloat width = cellFrame.size.width;
+    NSRect fromRect = NSMakeRect(0.0, (self.numFrames - self.activeFrame - 1) * self.frameHeight, self.frameWidth, self.frameHeight);
     
-    [self.image drawInRect:NSMakeRect(cellFrame.origin.x, cellFrame.origin.y + (self.activeFrame + 1 - self.numFrames) * height, width, self.numFrames * height)];
+    [self.image drawInRect:cellFrame fromRect:fromRect operation:NSCompositingOperationSourceOver fraction:1.0];
 }
 
 - (void)calcActiveFrame:(CGFloat)value // Expects value between 0 -> 100
 {
     NSInteger frame = (NSInteger) (floor(self.numFrames * value/100.0));
-    
-    if(frame >= self.numFrames)
-        frame = self.numFrames - 1;
+
+    frame = MAX(MIN(frame, self.numFrames - 1), 0);
     
     self.activeFrame = frame;
     

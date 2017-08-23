@@ -13,6 +13,9 @@
 @property(nonatomic) NSInteger numFrames;
 @property(nonatomic) NSInteger activeFrame;
 
+@property(nonatomic) CGFloat frameWidth;
+@property(nonatomic) CGFloat frameHeight;
+
 @property(nonatomic) NSPoint startPoint;
 @property(nonatomic) NSPoint *currentPoint;
 @property(nonatomic) NSPoint endPoint;
